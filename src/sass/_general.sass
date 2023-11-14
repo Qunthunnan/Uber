@@ -26,6 +26,41 @@ a:link, a:visited
 	font-weight: 400
 	text-align: center
 
+body
+	position: relative
+	
+.phone
+	position: absolute
+	right: 0px
+	top: 0px
+
+	&__window_done
+		display: none
+
+	&__window
+		padding: 35px 50px 136px 50px
+		background: rgba(0, 0, 0, 0.8)
+		&-close
+			position: absolute
+			right: 50%
+			transform: translateX(50%)
+			bottom: -6px
+			cursor: pointer
+
+	&__name input, &__number input
+		width: 300px
+		height: 40px
+		border-radius: 8px
+	
+	&__name label, &__number label
+		display: block
+		color: white
+		font-size: 15px
+
+	&__number
+		margin-top: 30px
+
+
 header
 	position: relative
 
@@ -45,7 +80,7 @@ header
 		margin: 0
 		list-style-type: none
 		display: flex
-		justify-content: space-around
+		justify-content: center
 		align-items: center
 
 
@@ -60,7 +95,7 @@ header
 		font-size: 15px
 		font-weight: 300
 		line-height: 30px
-		padding: 0px 50px
+		padding: 0px 60px
 		color: #FFFFFF
 		text-decoration: none
 		height: 30px
@@ -73,6 +108,8 @@ header
 		height: 85px
 		position: absolute
 		width: 100%
+		.container
+			position: relative
 
 	.logo
 		margin-top: 15px
@@ -118,6 +155,8 @@ header
 		font-weight: 400
 		text-align: center
 		text-transform: uppercase
+		// transform: translate(32px, 216px);
+		// z-index: 2
 		&:active
 			box-shadow: rgba(1, 1, 1, 0.4) inset 0px 0px 0px 3px
 
@@ -150,6 +189,7 @@ header
 		text-align: center
 
 	.send_resume_btn
+		padding: 19px 0
 		display: block
 		height: 63px
 		width: 259px
