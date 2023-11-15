@@ -32,33 +32,63 @@ body
 .phone
 	position: absolute
 	right: 0px
-	top: 0px
-
-	&__window_done
-		display: none
+	top: -500px
 
 	&__window
-		padding: 35px 50px 136px 50px
+		padding: 35px 50px 121px 50px
 		background: rgba(0, 0, 0, 0.8)
+		display: flex
+		flex-direction: column
+		align-items: center
+		&_order
+			position: absolute
+			right: 0px
+			top: 0px
+		&_done
+			padding: 35px 75px
+			position: absolute
+			right: 0px
+			top: -500px
 		&-close
 			position: absolute
 			right: 50%
-			transform: translateX(50%)
-			bottom: -6px
+			transform: translateX(50%) scale(130%)
+			bottom: -1px
 			cursor: pointer
+		&-descr
+			color: white
+			text-align: center
+			font-weight: 400
+			width: 300px
+			font-size: 18px
+	
+	&__name, &__number
+		min-height: 105px
+		width: 300px
+
+	.iti
+		width: 100%
+		&__selected-flag
+			height: 40px
 
 	&__name input, &__number input
-		width: 300px
+		width: 100%
 		height: 40px
 		border-radius: 8px
+		background: #00000000
+		color: white
+		border: 1px solid #8d8a8a
 	
 	&__name label, &__number label
 		display: block
 		color: white
 		font-size: 15px
 
+	&__name label.phone__form-error, &__number label.phone__form-error
+		font-size: 13px
+
 	&__number
-		margin-top: 30px
+		margin-top: 15px
 
 
 header
@@ -155,8 +185,11 @@ header
 		font-weight: 400
 		text-align: center
 		text-transform: uppercase
-		// transform: translate(32px, 216px);
-		// z-index: 2
+		transition: 0.6s all
+		&_active
+			position: relative
+			transform: translate(32px,257px)
+			z-index: 2
 		&:active
 			box-shadow: rgba(1, 1, 1, 0.4) inset 0px 0px 0px 3px
 
