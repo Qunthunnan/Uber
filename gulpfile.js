@@ -1,4 +1,4 @@
-const gulp        = require('gulp');
+const gulp = require('gulp');
 const browserSync = require('browser-sync');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
@@ -40,7 +40,7 @@ gulp.task('watch', function() {
 
 gulp.task('html', function () {
     return gulp.src("src/*.html")
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
         .pipe(gulp.dest("dist/"));
 });
 
@@ -64,7 +64,9 @@ gulp.task('icons', function () {
 
 gulp.task('images', function () {
     return gulp.src("src/img/**/*")
-        .pipe(imagemin())
+        .pipe(imagemin([
+            imagemin.mozjpeg({quality: 90})
+        ]))
         .pipe(gulp.dest("dist/img"))
         .pipe(browserSync.stream());
 });
