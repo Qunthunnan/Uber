@@ -11,5 +11,5 @@ export default function localeRedirect() {
         localStorage.setItem('lang', lang);
     }
     
-    document.location.replace(`/pulse/${lang}`);
+    document.location.replace(`/uber/${lang}`);
 }
